@@ -153,17 +153,25 @@ def print_activity_summary(times, motion_values):
         return
 
     mean_motion = np.mean(motion_values)
-    high_activity = times[motion_values > mean_motion]
-    low_activity = times[motion_values <= mean_motion]
 
-    print(f"Average motion magnitude: {mean_motion:.2f}")
+    high_activity_mask = motion_values > mean_motion
+    low_activity_mask = motion_values <= mean_motion
 
-    if len(high_activity) > 0:
-        print(f"Plausible high-activity periods around: {high_activity[:10]}")
+    high_times = times[high_activity_mask]
+    low_times = times[low_activity_mask]
 
-    if len(low_activity) > 0:
-        print(f"Plausible low-activity periods around: {low_activity[:10]}")
+    print("\n=== Activity Summary ===")
+    print(f"Mean Motion Magnitude: {mean_motion:.2f}")
 
+    if len(high_times) > 0:
+        print(f"\nHigh Activity Detected:")
+        print(f"Approx time range: {high_times[0]:.2f}s to {high_times[-1]:.2f}s")
+        print(f"Sample timestamps: {high_times[:5]}")
+
+    if len(low_times) > 0:
+        print(f"\nLow Activity Detected:")
+        print(f"Approx time range: {low_times[0]:.2f}s to {low_times[-1]:.2f}s")
+        print(f"Sample timestamps: {low_times[:5]}")
 
 def main():
     video_path = "data/octopus_camouflage.mp4"
