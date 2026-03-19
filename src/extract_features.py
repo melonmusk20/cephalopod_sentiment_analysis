@@ -1,19 +1,24 @@
-import cv2 
+import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 import os
+
 
 def get_video_info(video_path):
     cap = cv2.VideoCapture(video_path)
 
     if not cap.isOpened():
         raise ValueError(f"Could not open video: {video_path}")
-    
+
     fps = cap.get(cv2.CAP_PROP_FPS)
-    width = cap.get(cv2.CAP_PROP_FRAME_WIDTH)
-    height = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
+    if fps <= 0:
+        cap.release()
+        raise ValueError(f"Invalid FPS for video: {video_path}")
+
+    width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+    height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
     total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
-    duration = total_frames / fps if fps > 0 else 0
+    duration = total_frames / fps
 
     cap.release()
 
@@ -31,31 +36,32 @@ def extract_features(video_path):
 
     if not cap.isOpened():
         raise ValueError(f"Could not open video: {video_path}")
-    
+
+    fps = cap.get(cv2.CAP_PROP_FPS)
+    if fps <= 0:
+        cap.release()
+        raise ValueError(f"Invalid FPS for video: {video_path}")
+
     motion_values = []
     hist_values = []
     times = []
 
     prev_gray = None
     prev_hist = None
-
-    fps = cap.get(cv2.CAP_PROP_FPS)
     frame_idx = 0
-
 
     while True:
         ret, frame = cap.read()
         if not ret:
             break
-        
+
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
-        # Feature 1 : Motion magnitude using frame differencing
+        # Feature 1: Motion magnitude using frame differencing
         if prev_gray is not None:
             diff = cv2.absdiff(prev_gray, gray)
             motion = np.mean(diff)
             motion_values.append(motion)
-
 
         # Feature 2: Histogram change
         hist = cv2.calcHist([gray], [0], None, [32], [0, 256])
@@ -79,6 +85,9 @@ def extract_features(video_path):
 
 def save_sample_frames(video_path, output_path, num_frames=3):
     cap = cv2.VideoCapture(video_path)
+
+    if not cap.isOpened():
+        raise ValueError(f"Could not open video: {video_path}")
 
     total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
     frame_indices = np.linspace(0, total_frames - 1, num_frames, dtype=int)
@@ -106,10 +115,27 @@ def save_sample_frames(video_path, output_path, num_frames=3):
 
 
 def plot_features(times, motion_values, hist_values, output_path):
+    mean_motion = np.mean(motion_values)
+
     plt.figure(figsize=(12, 6))
 
+    # Main feature plots
     plt.plot(times, motion_values, label="Motion Magnitude")
     plt.plot(times, hist_values, label="Histogram Change")
+
+    # Mean motion line
+    plt.axhline(mean_motion, linestyle="--", label="Mean Motion")
+
+    # Highlight high activity periods
+    high_activity = motion_values > mean_motion
+    plt.fill_between(
+        times,
+        motion_values,
+        mean_motion,
+        where=high_activity,
+        alpha=0.3,
+        label="High Activity"
+    )
 
     plt.xlabel("Time (seconds)")
     plt.ylabel("Feature Value")
