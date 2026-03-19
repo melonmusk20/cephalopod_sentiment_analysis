@@ -88,8 +88,8 @@ cephalopod-entry-task/
 ### 1. Clone repository
 
 ```bash
-git clone https://github.com/your-username/cephalopod-entry-task.git
-cd cephalopod-entry-task
+git clone [https://github.com/melonmusk20/cephalopod_sentiment_analysis.git]
+cd cephalopod sentiment analysis
 ```
 
 ### 2. Install dependencies
