@@ -1,4 +1,4 @@
-# 🐙 Sentiment Analysis of Cephalopods – GSoC 2026 Entry Task
+# 🐙 Sentiment Analysis of Cephalopods
 
 ## 📌 Overview
 This repository contains my submission for the GSoC 2026 entry task for the project **"Sentiment Analysis of Cephalopods"**.
