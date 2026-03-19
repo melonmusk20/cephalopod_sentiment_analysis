@@ -68,6 +68,9 @@ cephalopod-entry-task/
 │── data/
 │ └── sample_video.mp4
 │
+│── notebooks/
+│ ├── analysis.ipynb
+│
 │── outputs/
 │ ├── feature_plot.png
 │ └── sample_frames.png
