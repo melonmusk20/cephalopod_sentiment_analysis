@@ -66,7 +66,7 @@ These help identify:
 ```bash
 cephalopod-entry-task/
 │── data/
-│ └── sample_video.mp4
+│ └── octopus_camouflage.mp4
 │
 │── notebooks/
 │ ├── analysis.ipynb
@@ -88,8 +88,8 @@ cephalopod-entry-task/
 ### 1. Clone repository
 
 ```bash
-git clone [https://github.com/melonmusk20/cephalopod_sentiment_analysis.git]
-cd cephalopod sentiment analysis
+git clone https://github.com/melonmusk20/cephalopod_sentiment_analysis.git
+cd cephalopod_sentiment_analysis
 ```
 
 ### 2. Install dependencies
@@ -104,6 +104,11 @@ pip install -r requirements.txt
 python src/extract_features.py
 ```
 
+## 4. Notebook instruction
+
+```bash
+   Open notebooks/analysis.ipynb to view the exploratory workflow and plots.
+```
 ---
 
 ## 📤 Outputs
@@ -140,8 +145,8 @@ could significantly improve behavioral inference.
 
 ## Key Observations
 
-- Motion magnitude shows noticeable spikes around X–Y seconds, indicating increased activity.
-- Histogram change also rises during these intervals, suggesting simultaneous visual variation.
+- Motion magnitude shows noticeable spikes around 3–5 seconds, indicating increased activity.
+- Histogram change also rises near these intervals, suggesting simultaneous visual variation.
 - Periods with low motion and low histogram change correspond to relatively stable or calm behavior.
 
 ---
