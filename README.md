@@ -138,22 +138,26 @@ could significantly improve behavioral inference.
 
 ---
 
+## Key Observations
+
+- Motion magnitude shows noticeable spikes around X–Y seconds, indicating increased activity.
+- Histogram change also rises during these intervals, suggesting simultaneous visual variation.
+- Periods with low motion and low histogram change correspond to relatively stable or calm behavior.
+
+---
+
 ## ⚠️ Limitations
 
-   • No direct posture or body-part tracking
+- Motion magnitude is sensitive to camera movement and noise.
+- Histogram change can be affected by lighting variations.
+- These features do not capture posture or fine-grained body dynamics.
+- Behavioral sentiment cannot be reliably inferred from video alone.
 
-   • Sensitive to lighting and camera movement
+---
 
-   • Cannot infer true emotional states
+##  Future Work
 
-   • Works as a baseline, not a full behavioral model
-
-##  Future Improvements
- 
-   • Optical flow-based motion analysis
-
-   • Contour and shape tracking
-
-   • Multi-modal integration (audio + video)
-
-   • Deep learning models for behavior classification
+- Optical flow for richer motion representation
+- Contour-based analysis for body shape and posture
+- Multi-modal integration (audio + video)
+- Temporal modeling for behavior sequences
