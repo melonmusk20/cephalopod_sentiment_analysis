@@ -66,18 +66,14 @@ These help identify:
 ```bash
 cephalopod-entry-task/
 │── data/
-│ └── octopus_camouflage.mp4
-│
+│   └── octopus_camouflage.mp4
 │── notebooks/
-│ ├── analysis.ipynb
-│
+│   └── analysis.ipynb
 │── outputs/
-│ ├── feature_plot.png
-│ └── sample_frames.png
-│
+│   ├── feature_plot.png
+│   └── sample_frames.png
 │── src/
-│ └── extract_features.py
-│
+│   └── extract_features.py
 │── requirements.txt
 │── README.md
 ```
