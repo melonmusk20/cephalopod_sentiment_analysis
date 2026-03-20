@@ -71,7 +71,8 @@ cephalopod-entry-task/
 │   └── analysis.ipynb
 │── outputs/
 │   ├── feature_plot.png
-│   └── sample_frames.png
+│   ├── sample_frames.png
+|   └── terminal_output.png
 │── src/
 │   └── extract_features.py
 │── requirements.txt
@@ -114,6 +115,9 @@ Open notebooks/analysis.ipynb to view the exploratory workflow and plots.
 
 ### 🎞️ Sample Frames
 <img src="outputs/sample_frames.png" width="700">
+
+### 💻 Terminal Output
+<img src="outputs/terminal_output.png" width="700">
 
 
 ## 🧠 Behavioral Analysis
