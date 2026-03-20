@@ -103,7 +103,7 @@ python src/extract_features.py
 ## 4. Notebook instruction
 
 ```bash
-   Open notebooks/analysis.ipynb to view the exploratory workflow and plots.
+Open notebooks/analysis.ipynb to view the exploratory workflow and plots.
 ```
 ---
 
