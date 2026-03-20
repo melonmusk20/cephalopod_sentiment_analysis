@@ -114,7 +114,7 @@ Open notebooks/analysis.ipynb to view the exploratory workflow and plots.
 
 ### 🎞️ Sample Frames
 <img src="outputs/sample_frames.png" width="700">
----
+
 
 ## 🧠 Behavioral Analysis
 
