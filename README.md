@@ -111,14 +111,13 @@ python src/extract_features.py
 ```
 ---
 
-## 📤 Outputs
+## 📊 Sample Outputs
 
-Generated files (in outputs/):
+### 📈 Feature Plot
+<img src="outputs/feature_plot.png" width="700">
 
-• feature_plot.png
-
-• sample_frames.png
-
+### 🎞️ Sample Frames
+<img src="outputs/sample_frames.png" width="700">
 ---
 
 ## 🧠 Behavioral Analysis
