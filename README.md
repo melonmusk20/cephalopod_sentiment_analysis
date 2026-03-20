@@ -119,6 +119,7 @@ Open notebooks/analysis.ipynb to view the exploratory workflow and plots.
 ### 💻 Terminal Output
 <img src="outputs/terminal_output.png" width="700">
 
+---
 
 ## 🧠 Behavioral Analysis
 
