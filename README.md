@@ -9,7 +9,7 @@ The goal of this task is to demonstrate:
 - Visualization of behavioral signals
 - Reasoning about possible behavioral states
 
-This implementation focuses on lightweight, interpretable methods rather than complex models, in line with the exploratory nature of the task.
+This implementation focuses on simple, interpretable baselines before moving toward complex multi-modal modeling.
 
 ---
 
