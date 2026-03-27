@@ -121,6 +121,11 @@ Open notebooks/analysis.ipynb to view the exploratory workflow and plots.
 
 ---
 
+## Demo Video
+https://youtu.be/VtCRYbJeNBE 
+
+---
+
 ## 🧠 Behavioral Analysis
 
 The motion magnitude feature provides a simple estimate of activity over time. Higher values may indicate rapid movement, escape behavior, or active exploration, while lower values may correspond to resting or calm states.
